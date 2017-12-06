@@ -1,0 +1,17 @@
+﻿@model FinalCS460.Models.ITEM
+@{
+    ViewBag.Title = "Delete";
+    ViewBag.ItemID = Html.DisplayFor(i => i.ItemID);
+    ViewBag.ItemName = Html.DisplayFor(i => i.ItemName);
+    ViewBag.ItemDesc = Html.DisplayFor(i => i.ItemDesc);
+}
+
+<h2>Delete Item</h2>
+
+<h4>Item ID: @ViewBag.ItemID</h4>
+<h4>Item Name: @ViewBag.ItemName</h4>
+<h4>Item Description: @ViewBag.ItemDesc</h4>
+
+<form method="POST">
+    <input type="submit" value="Delete Item" />
+</form>

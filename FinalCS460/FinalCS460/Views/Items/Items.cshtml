@@ -1,0 +1,19 @@
+﻿@model IEnumerable<FinalCS460.Models.ITEM>
+@{
+    ViewBag.Title = "Items";
+}
+
+<h2>Items For Sale</h2>
+
+@foreach (var item in Model.ToList())
+{
+    <h4>
+    @Html.ValueForModel("Item ID: " + item.ItemID.ToString())
+    @Html.ActionLink("Details", "/Details/" + item.ItemID.ToString())
+    @Html.ActionLink("Edit", "/Edit/" + item.ItemID.ToString())
+    @Html.ActionLink("Delete", "/Delete/" + item.ItemID.ToString())
+    </h4>
+}
+
+
+<h3>@Html.ActionLink("Add an Item", "Create")</h3>

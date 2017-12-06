@@ -1,0 +1,14 @@
+﻿@model IEnumerable<FinalCS460.Models.ITEM>
+@{
+    ViewBag.Title = "Bid";
+}
+
+<h2>Select an Item to Bid On</h2>
+
+@foreach (var item in Model.ToList())
+{
+    <h4>
+    @Html.ValueForModel(item.ItemName)
+    @Html.ActionLink("Bid", "/CreateBid/" + item.ItemID)
+    </h4>
+}

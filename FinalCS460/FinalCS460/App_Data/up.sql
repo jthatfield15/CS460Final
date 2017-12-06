@@ -28,7 +28,7 @@ CREATE TABLE dbo.ITEMS
 CREATE TABLE dbo.BIDS
 (
 	BidID		INT IDENTITY(1,1) NOT NULL,
-	Price		FLOAT NOT NULL,
+	Price		NVARCHAR(16) NOT NULL,
 	BidDateTime	DATETIME NOT NULL,
 	ItemID		INT NOT NULL,
 	BuyerID		INT NOT NULL,
@@ -59,5 +59,5 @@ INSERT INTO dbo.ITEMS (SellerID, ItemName, ItemDesc) VALUES
 (2, 'Bob Dylan Love Poems'      ,'Five versions of an original unpublished, handwritten, love poem by Bob Dylan');
 
 INSERT INTO dbo.BIDS (ItemID, BuyerID, Price, BidDateTime) VALUES
-(1, 3, 250000,'12/04/2017 09:04:22'),
-(3, 1, 95000 ,'12/04/2017 08:44:03');
+(1, 3, '250000','12/04/2017 09:04:22'),
+(3, 1, '95000','12/04/2017 08:44:03');

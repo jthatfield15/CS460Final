@@ -1,0 +1,23 @@
+﻿@model FinalCS460.Models.ITEM
+@{
+    ViewBag.Title = "CreateBid";
+    ViewBag.ItemID = Html.DisplayFor(i => i.ItemID);
+    ViewBag.ItemName = Html.DisplayFor(i => i.ItemName);
+    ViewBag.ItemDesc = Html.DisplayFor(i => i.ItemDesc);
+}
+
+<h2>Bid on this Item</h2>
+
+<h4>Item ID: @ViewBag.ItemID</h4>
+<h4>Item Name: @ViewBag.ItemName</h4>
+<h4>Item Description: @ViewBag.ItemDesc</h4>
+
+<form method="post">
+    <display for="Buyer's Name">Buyers Name</display>
+    <input type="text" name="buyersName" id="buyersName" />
+    <br /><br />
+    <diplay for="price">Bid Price</diplay>
+    <input type="number" name="price" id="price" title="Bid Price" />
+    <br /><br />
+    <input type="submit" value="Submit" />
+</form>

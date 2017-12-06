@@ -18,8 +18,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Home", "Index", "Items", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Application name", "Index", "Items", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Application name", "Index", "Items", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Items", "Items", "Items", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -30,6 +29,7 @@
 
     <div class="container body-content">
         @RenderBody()
+        @RenderSection("Javascript", required: false)
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>

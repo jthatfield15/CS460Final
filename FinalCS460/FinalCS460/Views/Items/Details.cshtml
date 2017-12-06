@@ -1,0 +1,40 @@
+﻿@model FinalCS460.Models.ITEM
+@{
+    ViewBag.Title = "Details";
+    ViewBag.ItemID = Html.DisplayFor(i => i.ItemID);
+    ViewBag.ItemName = Html.DisplayFor(i => i.ItemName);
+    ViewBag.ItemDesc = Html.DisplayFor(i => i.ItemDesc);
+}
+
+<h2>Item Details</h2>
+
+<h4>Item ID: @ViewBag.ItemID</h4>
+<h4>Item Name: @ViewBag.ItemName</h4>
+<h4>Item Description: @ViewBag.ItemDesc</h4>
+
+<br /><br />
+<div id="output"></div>
+
+<script>
+
+    function makeAjaxCall(id) {
+        document.getElementById('output').innerHTML = null;
+
+        $.ajax({
+            url: "/Items/getDetails/" + id,
+            type: "POST",
+            //datatype: "json",
+            success: function (returnData) {
+                returnData.arr.forEach(function (item) {
+                    $('#output').append(item);
+                }
+                )
+            }
+        });
+    }
+
+    var interval = 1000 * 5;
+
+    window.setInterval(makeAjaxCall, interval, @ViewBag.ItemID);
+
+</script>
